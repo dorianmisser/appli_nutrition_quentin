@@ -1,0 +1,126 @@
+/*
+  Direction visuelle « bord de route du Nord » :
+  ciel pâle de Flandre, ardoise pour le texte, rouge brique du logo réservé aux actions et à l'avancement.
+  Barlow Condensed pour les titres et les chiffres (signalétique de course), Barlow pour le texte.
+*/
+:root {
+  --sky: #e8edef;
+  --paper: #ffffff;
+  --tint: #dde5e8;
+  --slate: #1d2a33;
+  --slate-2: #4a5a64;
+  --line: #c6d0d5;
+  --brick: #c41732;
+  --brick-deep: #93101f;
+  --ok: #2c7a52;
+  --watch: #a86e0a;
+  --alert: #c8322b;
+  --ochre: #d9a441;
+
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-text: 'Barlow', system-ui, sans-serif;
+
+  --step--1: 0.875rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.6rem;
+  --step-3: 2.1rem;
+  --step-4: 2.8rem;
+
+  --radius-s: 6px;
+  --radius-m: 10px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --measure: 68ch;
+
+  color-scheme: light;
+  font-family: var(--font-text);
+  font-size: 106.25%; /* 17 px */
+  line-height: 1.5;
+  color: var(--slate);
+  background: var(--sky);
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--sky);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.005em;
+}
+
+h1 { font-size: var(--step-4); }
+h2 { font-size: var(--step-2); }
+h3 { font-size: var(--step-1); }
+
+p { margin: 0; }
+
+a {
+  color: var(--brick-deep);
+  text-underline-offset: 3px;
+}
+
+a:hover { color: var(--brick); }
+
+:focus-visible {
+  outline: 3px solid var(--brick);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+img { max-width: 100%; display: block; }
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -60px;
+  padding: 8px 12px;
+  background: var(--slate);
+  color: #fff;
+  z-index: 10;
+}
+
+.skip-link:focus { top: 8px; }
+
+.muted { color: var(--slate-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
